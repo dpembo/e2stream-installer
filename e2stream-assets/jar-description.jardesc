@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="e2Stream-installer/e2streamassets.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/E2StreamAssets/jar-description.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=E2StreamAssets/src"/>
+        <file path="/E2StreamAssets/index.html"/>
+        <file path="/E2StreamAssets/altdirectory.html"/>
+        <file path="/E2StreamAssets/e2stream.pkg"/>
+        <file path="/E2StreamAssets/jquery.js"/>
+        <file path="/E2StreamAssets/logo.png"/>
+        <file path="/E2StreamAssets/dropdown.js"/>
+        <file path="/E2StreamAssets/about.html"/>
+        <file path="/E2StreamAssets/dropdown.css"/>
+        <file path="/E2StreamAssets/jquery-ui.js"/>
+        <file path="/E2StreamAssets/exit.html"/>
+        <file path="/E2StreamAssets/jar-description.jardesc"/>
+        <file path="/E2StreamAssets/jquerymin.css"/>
+        <file path="/E2StreamAssets/style.css"/>
+        <file path="/E2StreamAssets/error.html"/>
+    </selectedElements>
+</jardesc>

@@ -1,0 +1,67 @@
+
+<project name="E2StreamInstaller" default="dist" basedir=".">
+    <description>E2Stream Installer</description>
+
+
+<property name="src" location="src"/>
+<property name="build" location="build"/>
+<property name="dist"  location="dist"/>
+
+	
+<target name="init">
+	<!-- Create the time stamp -->
+	<tstamp/>
+	<!-- Create the build directory structure used by compile -->
+	<mkdir dir="${build}"/>
+	<mkdir dir="${dist}"/>
+	<mkdir dir="${release}"/>
+
+</target>
+	
+
+<target name="version" depends="init">
+		<replace file="${src}/uk/co/pembo/e2stream/server/Settings.java" token="X.X" value="${setversion}"/>
+</target>
+	
+<target name="compile" depends="version" description="compile the source " >
+		
+	<!-- Compile the java code from ${src} into ${build} -->
+	<javac classpath="${basedir}/e2streamassets.jar" srcdir="${src}" destdir="${build}"/>
+</target>
+	
+<target name="prepjar" depends="compile" description="add the runnable eclipse classes">
+	<unzip src="../e2stream-assets/jar-runner.zip" dest="${build}"/>
+</target>
+
+<target name="dist-jar" depends="prepjar" description="build installer jar">
+	  <copy file="${basedir}/e2streamassets.jar" todir="${build}"/>
+	  <jar destfile="${dist}/e2stream-installer.jar"
+	       basedir="${build}">
+		
+	  	<manifest>
+	  	  <attribute name="Built-By" value="pembo"/>
+  		  <attribute name="Rsrc-Class-Path" value="./ e2streamassets.jar"/>
+	  	  <attribute name="Class-Path" value="."/>	  		
+   		  <attribute name="Rsrc-Main-Class" value="uk.co.pembo.e2stream.server.Startup"/>
+	  	  <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+	  		<section name="common">
+			  <attribute name="Implementation-Title" value="E2Stream-Installer"/>
+	   		  <attribute name="Implementation-Version" value="${setversion}"/> 
+		      <attribute name="Implementation-Vendor" value="Pembo.co.uk"/>
+		    </section>
+		</manifest>  
+	</jar>
+	
+	<copy file="${basedir}/readme.txt" todir="${dist}"/>
+	<copy file="${basedir}/e2stream-Install.cmd" todir="${dist}"/>
+</target>
+
+<target name="dist" depends="dist-jar" description="build-release-zip">
+	<zip destfile="${basedir}/E2Stream_v${setversion}.zip" basedir="${dist}"/>
+</target>
+
+<target name="distdebug" depends="dist-jar" description="build-release-zip">
+		<zip destfile="${basedir}/E2Stream_v${setversion}dbg.zip" basedir="${dist}"/>
+</target>	
+
+</project>

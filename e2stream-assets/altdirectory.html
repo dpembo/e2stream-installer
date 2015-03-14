@@ -1,0 +1,104 @@
+<html>
+
+<body style="font-family:verdana">
+<head>
+<link href="/style.css" rel="stylesheet">
+<link rel="stylesheet" href="jquerymin.css">
+<link rel="stylesheet" href="dropdown.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="dropdown.js"></script>
+
+<script language="javascript">
+	function exitInstaller()
+	{
+		document.getElementById("exitPanel").style.display="block";
+		document.getElementById("adPanel").style.display="none";
+	}
+
+	function showADSettings()
+	{
+		document.getElementById("exitPanel").style.display="none";
+		document.getElementById("adPanel").style.display="block";
+	}
+
+	function setView()
+	{
+		var sURL = window.document.URL.toString();
+		if(sURL.indexOf("altdir")>0)showADSettings();
+	}
+	
+	function showhide(inId)
+	{
+		elem = document.getElementById(inId);
+		style = elem.style.display;
+		if(style!='none')elem.style.display="block";
+		else elem.style.display="none";
+	}
+
+</script>
+
+
+</head>
+
+<body>
+
+<div id="header">
+
+<a data-dropdown="#dropdown-1" class="menuicon" href="#">  &#9776;</a>
+E2Stream #APPVERS#
+<span id="smallHeader">The Engima2 Samsung SMART TV Streaming App</span>
+<span style="float:right;margin-right:20px;position: relative;top: -60px;"><img width="67" height="60" src="logo.png"></span>
+</div>
+
+<div id="dropdown-1" class="dropdown dropdown-tip" style="left: 10px; top: 60px; z-index: 800; position:absolute;">
+    <ul class="dropdown-panel">
+        <li><a href="/index.html">Install</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="http://www.pembo.co.uk/e2stream">E2Stream Website</a></li>
+        <li class="dropdown-divider"><hr></li>
+        <li><a href="/adddirectory.html">Configuration</a></li>
+		<li><a href="/exit.html">Exit Installer</a></li>
+    </ul>
+</div>
+
+<div id="body">
+ <div id="instructions">
+Select one of the configuration options below<br><br>
+ </div>
+
+
+<div class="PanelHeader" id="exitPanelheader">Quit Installer?</div>
+<div class="Panel" id="exitPanel">
+<form method="get" action="/exit.html">
+<input type="submit" value="Quit Installer">
+</form>
+</div>
+<br>
+<div class="PanelHeader" id="adPanelHeader">Additional Apps Directory</div>
+<div class="Panel" id="adPanel">
+<form method="get" action="/adddirectory.html">
+<input type="text" size="60" value="#DIR#" name="altdir">
+<input type="submit" value="Set Additional Directory">
+</form>
+Apps Discovered within directory that will be installed:<br>
+#APPSLIST#<br><br>
+</div>
+<br>
+
+
+</body>
+</html>
+<!-- END MAIN BODY HTML #################################################################### --> 
+ 
+
+</div>
+
+<div id="buttons">
+<span id="copyright" style="float:right;display: block; color:#ffffff;top:10px;margin-right: 20px;position: relative;">Copyright &copy; 2014 Pembo.co.uk</span>
+<a href="http://www.pembo.co.uk"><img border="0" id="pembologo" width="183" height="50" src="http://www.pembo.co.uk/wp-content/themes/sensitive/images/logo.png" style="margin-left:20px;display:block;float:right;position:absolute;"></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+
+<body style="font-family:verdana" onload="getLog()">
+<head>
+<link href="/style.css" rel="stylesheet">
+<link rel="stylesheet" href="jquerymin.css">
+<link rel="stylesheet" href="dropdown.css">
+
+<script src="jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="dropdown.js"></script>
+
+<script language="javascript">
+
+var xmlHttp= new XMLHttpRequest();
+
+function s4() 
+{
+	return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+};
+
+function guid() {
+	return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+	s4() + '-' + s4() + s4() + s4();
+}
+
+	
+function getLog()
+{
+//alert("getLog");
+  var uuid=guid();
+  //document.getElementById('disablingDiv').className='disablingDivOn';
+  //document.getElementById('spinnerimage').className='loadingOn';
+  xmlHttp.open("GET","/logs.html?uuid=" + uuid,true);
+  xmlHttp.onreadystatechange = function () {updateLog();};
+  xmlHttp.send();
+}
+
+function updateLog()
+{
+	//alert("updateLog");
+	if(xmlHttp.readyState==4)
+	{
+		document.getElementById('consoleIframe').innerHTML=xmlHttp.response;
+	}
+}
+
+/** Refresh the logs input every 5 seconds **/
+setInterval(function(){ getLog(); }, 5000);
+
+</script>
+</head>
+
+<body>
+
+<div id="header">
+
+<a data-dropdown="#dropdown-1" class="menuicon" href="#">  &#9776;</a>
+E2Stream #APPVERS#
+<span id="smallHeader">The Engima2 Samsung SMART TV Streaming App</span>
+<span style="float:right;margin-right:20px;position: relative;top: -60px;"><img width="67" height="60" src="logo.png"></span>
+</div>
+
+<div id="dropdown-1" class="dropdown dropdown-tip" style="left: 10px; top: 60px; z-index: 800; position:absolute;">
+    <ul class="dropdown-panel">
+        <li><a href="/index.html">Install</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="http://www.pembo.co.uk/e2stream">E2Stream Website</a></li>
+        <li class="dropdown-divider"><hr></li>
+        <li><a href="/adddirectory.html">Configuration</a></li>
+		<li><a href="/exit.html">Exit Installer</a></li>
+    </ul>
+</div>
+
+<div id="body">
+ <div id="instructions">
+ Welcome to E2Stream, the Enigma2 streaming app for Samsung SMART TVs.<br>Please follow the instructions below or press on the menu icon (top left) for more information<br>
+ </div>
+
+<!--  MAIN BODY HTML #################################################################### --> 
+
+<div id="consoleIframe">
+</div>
+
+<br><br>
+This is the result of many man hours of development and testing effort<br>
+For any comments, question, requests, bugs, or to donate for continued development and support
+please head over to<br><a href="http://www.pembo.co.uk/e2stream">http://www.pembo.co.uk/e2stream</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="FUC3JMJ5KARLA">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+<!-- END MAIN BODY HTML #################################################################### --> 
+ 
+ 
+</div>
+
+<div id="buttons">
+<span id="copyright" style="float:right;display: block; color:#ffffff;top:10px;margin-right: 20px;position: relative;">Copyright &copy; 2014 Pembo.co.uk</span>
+<a href="http://www.pembo.co.uk"><img border="0" id="pembologo" width="183" height="50" src="http://www.pembo.co.uk/wp-content/themes/sensitive/images/logo.png" style="margin-left:20px;display:block;float:right;position:absolute;"></a>
+</div>
+
+</body>
+</html>
