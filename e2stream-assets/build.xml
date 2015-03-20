@@ -47,7 +47,7 @@
 </target>
 
 <target name="moveToInstaller">
-	<copy file="./e2streamassets.jar" todir="../e2Stream-installer"/>
+	<copy file="./e2streamassets.jar" todir="../e2stream-installer"/>
 </target>
 	
 </project>
