@@ -12,6 +12,10 @@
 +----------------------------------------------------------+
 
 Change log
+v6.3 - 22/03/2015
+* Added option in installer to download the app as a zip
+  for installation from other software
+  
 v6.2 - 22/03/2015
 * Moved source to github and modified build process/scripts
   to take this into account
