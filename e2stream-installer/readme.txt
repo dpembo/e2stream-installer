@@ -12,6 +12,12 @@
 +----------------------------------------------------------+
 
 Change log
+v6.2 - 22/03/2015
+* Moved source to github and modified build process/scripts
+  to take this into account
+* Corrected positional issue of title text on the now/next
+  detail infobar
+
 v6.1 - 15/02/2015
 * Resolved channel up/down button issue when streaming a
   channel
