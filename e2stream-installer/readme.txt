@@ -12,6 +12,15 @@
 +----------------------------------------------------------+
 
 Change log
+v6.5 - 25/05/2015
+* Implemented fix to avoid error on movie list items 
+  with no description (not normally E2 recordings!)
+  
+* Changed recordings/movie playback to honour the
+  transcoding settings that are set in the settings menu
+  to allow for playback of recordings using the
+  transcoder if needed.
+   
 v6.3 - 22/03/2015
 * Added option in installer to download the app as a zip
   for installation from other software
