@@ -6,12 +6,16 @@
 |  | |____ / /_ ____) | |_| | |  __/ (_| | | | | | |       |
 |  |______|____|_____/ \__|_|  \___|\__,_|_| |_| |_|       |
 |                                                          |
-|                         Copyright (c) 2015 - pembo.co.uk |
+|                         Copyright (c) 2016 - pembo.co.uk |
 +----------------------------------------------------------+                              
 |                          http://www.pembo.co.uk/e2stream |
 +----------------------------------------------------------+
 
 Change log
+v6.6 - 27/09/2016
+* Minor fix to recordings playback to resolve issue
+  with transcoding ports related to change made in v6.5
+
 v6.5 - 25/05/2015
 * Implemented fix to avoid error on movie list items 
   with no description (not normally E2 recordings!)
