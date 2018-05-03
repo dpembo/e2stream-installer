@@ -1,2 +1,2 @@
--language:java
+language: java
 script: "ant -buildfile e2stream-assets/build.xml"
