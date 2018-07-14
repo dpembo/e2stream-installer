@@ -1,3 +1,4 @@
+
 +----------------------------------------------------------+
 |   ______ ___   _____ _                                   |
 |  |  ____|__ \ / ____| |                                  |
@@ -12,6 +13,10 @@
 +----------------------------------------------------------+
 
 Change log
+v6.7 - 14/07/2018
+* Fixed installer to allow for download of zip and specify
+  of additional apps directory to install
+  
 v6.6 - 27/09/2016
 * Minor fix to recordings playback to resolve issue
   with transcoding ports related to change made in v6.5
@@ -350,7 +355,7 @@ v1.5 - 22/11/2014
 
 ---------------------------------------------------------
 
-E2Stream – the Enigma2 Samsung SMART TV Streaming App                  
+E2Stream Â– the Enigma2 Samsung SMART TV Streaming App                  
 
 Browse and watch channels from your Enigma2 set top box on a Samsung SMART TV connected to the same local network.
 
@@ -363,6 +368,6 @@ E2Stream requires:
 - To have Open WEBIF installed, enabled, running on port 80 and WITHOUT HTTP Authentication.
 - Know the ports for streaming/transcoding (Default being 8001 and 8002 repectively)
 
-Note – to control this, use UP/Down to browse the channel.  On moving through the list the NOW/NEXT updates on the right.
+Note Â– to control this, use UP/Down to browse the channel.  On moving through the list the NOW/NEXT updates on the right.
 
 If you do use E2Stream, please consider donating an amount of your choice to support the continued development and hosting costs of this app!
