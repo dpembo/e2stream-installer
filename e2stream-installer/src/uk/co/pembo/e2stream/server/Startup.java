@@ -84,9 +84,9 @@ public class Startup
             server.createContext("/dropdown.css", new StringBasedResponse("dropdown.css"));
             server.createContext("/logo.png", new ImgResponse("logo.png"));
             
-            server.createContext("/jquery.js", new ImgResponse("jquery.js"));
-            server.createContext("/jquery-ui.js", new ImgResponse("jquery-ui.js"));
-            server.createContext("/dropdown.js", new ImgResponse("dropdown.js"));
+            server.createContext("/jquery.js", new StringBasedResponse("jquery.js"));
+            server.createContext("/jquery-ui.js", new StringBasedResponse("jquery-ui.js"));
+            server.createContext("/dropdown.js", new StringBasedResponse("dropdown.js"));
             
             server.createContext("/logs.html", new LogResponse());
             
