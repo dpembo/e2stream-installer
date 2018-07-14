@@ -45,10 +45,18 @@ public class StringBasedResponse
             if(response == null)
                 response = "";
             
-            
             Headers responseHeaders = t.getResponseHeaders();
-            responseHeaders.set("Content-Type", "text/css");
-            t.sendResponseHeaders(200, response.length());
+            
+	    if(fileName.toUpperCase().endsWith(".JS"))
+	    {
+              responseHeaders.set("Content-Type", "application/javascript");
+            }
+	    else
+	    {
+	       responseHeaders.set("Content-Type", "text/css");
+	    }
+	    
+	    t.sendResponseHeaders(200, response.length());
             OutputStream os = t.getResponseBody();
             os.write(response.getBytes());
             os.close();
