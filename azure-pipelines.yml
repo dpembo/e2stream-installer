@@ -13,7 +13,7 @@ steps:
 - task: Ant@1
   inputs:
     workingDirectory: ''
-    buildFile: 'build.xml'
+    buildFile: 'e2stream-installer/build.xml'
     targets: jenkinsCombine
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
